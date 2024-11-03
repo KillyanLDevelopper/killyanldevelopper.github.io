@@ -1,48 +1,135 @@
 <!doctype html>
 <html lang="fr">
-
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
-    <title>
-        Portfolio Killyan Lebegue
-    </title>
+    <title>Portfolio Killyan Lebègue</title>
 </head>
 <body>
+    <header class="header">
+        <section class="Titre">
+            <h1>Killyan Lebegue</h1>
+            <img class="Killyan" src="img/Killyan.jpg" alt="Photo de Killyan">
+        </section>
+    </header>
 
-    <h1> Killyan Lebegue</h1>
-
-    <ul>
-        <li>
-            <a href="#presentation" class="nav_link">Présentation</a>
-        </li>
-
-        <li>
-            <a href="#competences" class="nav_link">Compétences</a>
-        </li>
-
-        <li>
-            <a href="#parcours" class="nav_link">Parcours</a>
-        </li>
-
-        <li>
-            <a href="#projets" class="nav_link">Projets</a>
-        </li>
-
-        <li>
-            <a href="#contact" class="nav_link">Contact</a>
-        </li>
+    <ul class="navigation">
+        <li><a href="#presentation" class="nav_link">Présentation</a></li>
+        <li><a href="#competences" class="nav_link">Compétences</a></li>
+        <li><a href="#parcours" class="nav_link">Parcours</a></li>
+        <li><a href="#projets" class="nav_link">Projets</a></li>
+        <li><a href="#contact" class="nav_link">Contact</a></li>
     </ul>
-    <p id="presentation"> Je suis Killyan Lebegue, étudiant en deuxième année de BUT Informatique à l'IUT RCC,
-        où je me spécialise dans le développement avec une préférence pour le langage C++. Au cours de ma formation,
-        j’ai acquis des compétences dans plusieurs langages de programmation tels que Python, C++, PHP, SQL, HTML et
-        CSS,
-        ce qui me permet de travailler sur une variété de projets,
-        allant du développement d’applications web à la gestion de bases de données.
-        Mon objectif à long terme est de devenir développeur de jeux vidéo.
-        J’ai toujours été passionné par cet univers et je souhaite pouvoir créer mes propres jeux,
-        en mettant à profit mes connaissances techniques et mon goût pour l’innovation.
-    </p>
 
+    <section class="presentation">
+        <p class="pres"><b>Présentation</b></p>
+        <p id="presentation" class="pres_killyan">Je suis Killyan Lebegue, étudiant en deuxième année de BUT Informatique à l'IUT RCC,
+            où je me spécialise dans le développement avec une préférence pour le langage C++. Au cours de ma formation,
+            j’ai acquis des compétences dans plusieurs langages de programmation tels que Python, C++, PHP, SQL, HTML et
+            CSS,
+            ce qui me permet de travailler sur une variété de projets,
+            allant du développement d’applications web à la gestion de bases de données.
+            Mon objectif à long terme est de devenir développeur de jeux vidéo.
+            J’ai toujours été passionné par cet univers et je souhaite pouvoir créer mes propres jeux,
+            en mettant à profit mes connaissances techniques et mon goût pour l’innovation.</p>
+    </section>
+
+    <section class="competences">
+        <p id="competences" class="comp"><b>Compétences</b></p>
+        <div class="competences_lst">
+            <!-- Python -->
+            <div class="competence-item" onclick="toggleDescription('python-desc')">
+                <p>Python</p>
+                <img class="competence-img" src="img/python-logo.jpg" alt="Python logo">
+                <div id="python-desc" class="competence-desc">
+                    <p>Python est un langage de programmation polyvalent, idéal pour le développement web, la data science, et l'automatisation.</p>
+                </div>
+            </div>
+            <!-- SQL -->
+            <div class="competence-item" onclick="toggleDescription('sql-desc')">
+                <p>SQL</p>
+                <img class="competence-img" src="img/oracle-logo.jpg" alt="SQL logo">
+                <div id="sql-desc" class="competence-desc">
+                    <p>SQL est un langage de requête utilisé pour manipuler et gérer des bases de données relationnelles.</p>
+                </div>
+            </div>
+            <!-- PHP -->
+            <div class="competence-item" onclick="toggleDescription('php-desc')">
+                <p>PHP</p>
+                <img class="competence-img" src="img/php.jpg" alt="PHP logo">
+                <div id="php-desc" class="competence-desc">
+                    <p>PHP est un langage de programmation largement utilisé pour le développement de sites web dynamiques.</p>
+                </div>
+            </div>
+            <!-- HTML -->
+            <div class="competence-item" onclick="toggleDescription('html-desc')">
+                <p>HTML</p>
+                <img class="competence-img" src="img/HTML5_logo.jpg" alt="HTML logo">
+                <div id="html-desc" class="competence-desc">
+                    <p>HTML est le langage standard pour créer des pages web et structurer leur contenu.</p>
+                </div>
+            </div>
+            <!-- CSS -->
+            <div class="competence-item" onclick="toggleDescription('css-desc')">
+                <p>CSS</p>
+                <img class="competence-img" src="img/css_logo.jpg" alt="CSS logo">
+                <div id="css-desc" class="competence-desc">
+                    <p>CSS est utilisé pour styliser les pages web et les rendre visuellement attrayantes. Il contrôle les couleurs, la mise en page, et les polices de caractères.</p>
+                </div>
+            </div>
+            <!-- Symfony -->
+            <div class="competence-item" onclick="toggleDescription('symfony-desc')">
+                <p>Symfony</p>
+                <img class="competence-img" src="img/symfony_logo.jpg" alt="Symfony logo">
+                <div id="symfony-desc" class="competence-desc">
+                    <p>Symfony est un framework PHP qui facilite le développement d'applications web robustes et modulaires, avec une structure bien définie.</p>
+                </div>
+            </div>
+            <!-- C++ -->
+            <div class="competence-item" onclick="toggleDescription('cpp-desc')">
+                <p>C++</p>
+                <img class="competence-img" src="img/cpp_logo.jpg" alt="CPP logo">
+                <div id="cpp-desc" class="competence-desc">
+                    <p>C++ est un langage de programmation orienté objet utilisé pour le développement de logiciels de haute performance, y compris les jeux vidéo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/scripts.js"></script>
+
+    <section class="parcours">
+        <h2>Parcours</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon"></div>
+                <div class="timeline-content">
+                    <h3>BUT informatique</h3>
+                    <p>IUT Reims-Châlons-Charleville, Reims</p>
+                    <span class="timeline-date">2023 / ...</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon"></div>
+                <div class="timeline-content">
+                    <h3>Baccalauréat</h3>
+                    <p>Lycée François-Bazin, Charleville-Mézières</p>
+                    <span class="timeline-date">2020 / 2023</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon"></div>
+                <div class="timeline-content">
+                    <h3>Brevet des collèges</h3>
+                    <p>Collège du Blanc-Marais, Rimogne</p>
+                    <span class="timeline-date">2016 / 2020</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 </body>
 </html>
+
