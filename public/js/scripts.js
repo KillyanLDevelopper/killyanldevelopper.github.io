@@ -19,3 +19,36 @@ function toggleDescription(id) {
     }
 }
 
+function toggleDetail(detailId, arrowId) {
+    const detailElement = document.getElementById(detailId);
+    const arrowElement = document.getElementById(arrowId);
+
+    if (detailElement.style.display === "none") {
+        detailElement.style.display = "block";
+        arrowElement.classList.add("open"); 
+    } else {
+        detailElement.style.display = "none";
+        arrowElement.classList.remove("open"); 
+    }
+}
+
+function filterCategory(category) {
+    const cards = document.querySelectorAll('.competence-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Activer/désactiver le bouton
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[onclick="filterCategory('${category}')"]`).classList.add('active');
+
+    // Filtrer les cartes
+    cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+
+

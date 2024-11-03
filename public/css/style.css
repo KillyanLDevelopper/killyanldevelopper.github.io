@@ -50,6 +50,70 @@ img {
     font-size: 40px;
 }
 
+.filter-menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: #3e3f3f;
+    border: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+
+/* Grille de compétences */
+.competences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.competence-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.competence-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.competence-card img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.competence-card p {
+    font-size: 18px;
+    color: black;
+}
+
+/* Cacher les compétences en fonction des filtres */
+.competence-card[data-category] {
+    display: none;
+}
+
+.competence-card[data-category="all"], .competence-card[data-category~="languages"],
+.competence-card[data-category~="frameworks"], .competence-card[data-category~="tools"] {
+    display: block;
+}
 .competences_lst {
     display: flex;
     overflow-x: auto;
@@ -136,3 +200,27 @@ img {
     margin-top: 5px;
     font-weight: bold;
 }
+.timeline-detail {
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #f1f1f1;
+    border-left: 2px solid #ccc;
+    font-size: 0.9em;
+    color: #666;
+    border-radius: 5px;
+}
+.timeline-content h3 {
+    cursor: pointer;
+}
+
+.toggle-arrow {
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+.toggle-arrow.open {
+    transform: rotate(90deg);
+}
+

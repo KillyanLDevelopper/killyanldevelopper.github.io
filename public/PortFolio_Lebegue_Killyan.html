@@ -36,15 +36,26 @@
 
     <section class="competences">
         <p id="competences" class="comp"><b>Compétences</b></p>
+        
+        <div class="filter-menu">
+            <button class="filter-btn active" onclick="filterCategory('all')">Tous</button>
+            <button class="filter-btn" onclick="filterCategory('languages')">Langages</button>
+            <button class="filter-btn" onclick="filterCategory('frameworks')">Frameworks</button>
+            <button class="filter-btn" onclick="filterCategory('tools')">Logiciels</button>
+        </div>
+
+        <!-- Catégorie Langages -->
+        <h3>Langages</h3>
         <div class="competences_lst">
             <!-- Python -->
             <div class="competence-item" onclick="toggleDescription('python-desc')">
                 <p>Python</p>
                 <img class="competence-img" src="img/python-logo.jpg" alt="Python logo">
                 <div id="python-desc" class="competence-desc">
-                    <p>Python est un langage de programmation polyvalent, idéal pour le développement web, la data science, et l'automatisation.</p>
+                    <p>Python est un langage polyvalent idéal pour le développement web, la data science et l'automatisation.</p>
                 </div>
             </div>
+    
             <!-- SQL -->
             <div class="competence-item" onclick="toggleDescription('sql-desc')">
                 <p>SQL</p>
@@ -53,6 +64,7 @@
                     <p>SQL est un langage de requête utilisé pour manipuler et gérer des bases de données relationnelles.</p>
                 </div>
             </div>
+    
             <!-- PHP -->
             <div class="competence-item" onclick="toggleDescription('php-desc')">
                 <p>PHP</p>
@@ -61,6 +73,7 @@
                     <p>PHP est un langage de programmation largement utilisé pour le développement de sites web dynamiques.</p>
                 </div>
             </div>
+    
             <!-- HTML -->
             <div class="competence-item" onclick="toggleDescription('html-desc')">
                 <p>HTML</p>
@@ -69,33 +82,124 @@
                     <p>HTML est le langage standard pour créer des pages web et structurer leur contenu.</p>
                 </div>
             </div>
+    
             <!-- CSS -->
             <div class="competence-item" onclick="toggleDescription('css-desc')">
                 <p>CSS</p>
                 <img class="competence-img" src="img/css_logo.jpg" alt="CSS logo">
                 <div id="css-desc" class="competence-desc">
-                    <p>CSS est utilisé pour styliser les pages web et les rendre visuellement attrayantes. Il contrôle les couleurs, la mise en page, et les polices de caractères.</p>
+                    <p>CSS est utilisé pour styliser les pages web et les rendre visuellement attrayantes.</p>
                 </div>
             </div>
-            <!-- Symfony -->
-            <div class="competence-item" onclick="toggleDescription('symfony-desc')">
-                <p>Symfony</p>
-                <img class="competence-img" src="img/symfony_logo.jpg" alt="Symfony logo">
-                <div id="symfony-desc" class="competence-desc">
-                    <p>Symfony est un framework PHP qui facilite le développement d'applications web robustes et modulaires, avec une structure bien définie.</p>
-                </div>
-            </div>
+    
             <!-- C++ -->
             <div class="competence-item" onclick="toggleDescription('cpp-desc')">
                 <p>C++</p>
                 <img class="competence-img" src="img/cpp_logo.jpg" alt="CPP logo">
                 <div id="cpp-desc" class="competence-desc">
-                    <p>C++ est un langage de programmation orienté objet utilisé pour le développement de logiciels de haute performance, y compris les jeux vidéo.</p>
+                    <p>C++ est un langage orienté objet utilisé pour les logiciels de haute performance, y compris les jeux vidéo.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Catégorie Frameworks -->
+        <h3>Frameworks</h3>
+        <div class="competences_lst">
+            <!-- Symfony -->
+            <div class="competence-item" onclick="toggleDescription('symfony-desc')">
+                <p>Symfony</p>
+                <img class="competence-img" src="img/symfony_logo.jpg" alt="Symfony logo">
+                <div id="symfony-desc" class="competence-desc">
+                    <p>Symfony est un framework PHP facilitant le développement d'applications web robustes et modulaires.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Catégorie Logiciels -->
+        <h3>Logiciels</h3>
+        <div class="competences_lst">
+            <!-- Jupyter -->
+            <div class="competence-item" onclick="toggleDescription('jupyter-desc')">
+                <p>Jupyter</p>
+                <img class="competence-img" src="img/jupyter_logo.jpg" alt="Jupyter logo">
+                <div id="jupyter-desc" class="competence-desc">
+                    <p>Jupyter est un environnement interactif pour la data science, permettant d'exécuter du code en direct.</p>
+                </div>
+            </div>
+    
+            <!-- Markdown -->
+            <div class="competence-item" onclick="toggleDescription('markdown-desc')">
+                <p>Markdown</p>
+                <img class="competence-img" src="img/markdown_logo.jpg" alt="Markdown logo">
+                <div id="markdown-desc" class="competence-desc">
+                    <p>Markdown est un langage de balisage léger, utilisé pour formater des fichiers textes.</p>
+                </div>
+            </div>
+    
+            <!-- Oracle -->
+            <div class="competence-item" onclick="toggleDescription('oracle-desc')">
+                <p>Oracle</p>
+                <img class="competence-img" src="img/oracle-logo.jpg" alt="Oracle logo">
+                <div id="oracle-desc" class="competence-desc">
+                    <p>Oracle Database est un système de gestion de base de données pour applications d'entreprise.</p>
+                </div>
+            </div>
+    
+            <!-- PhpStorm -->
+            <div class="competence-item" onclick="toggleDescription('phpstorm-desc')">
+                <p>PhpStorm</p>
+                <img class="competence-img" src="img/phpstorm_logo.jpg" alt="PhpStorm logo">
+                <div id="phpstorm-desc" class="competence-desc">
+                    <p>PhpStorm est un IDE avancé pour PHP, offrant des outils de développement performants.</p>
+                </div>
+            </div>
+    
+            <!-- PyCharm -->
+            <div class="competence-item" onclick="toggleDescription('pycharm-desc')">
+                <p>PyCharm</p>
+                <img class="competence-img" src="img/pycharm_logo.jpg" alt="PyCharm logo">
+                <div id="pycharm-desc" class="competence-desc">
+                    <p>PyCharm est un IDE dédié à Python, avec des fonctionnalités de débogage et de gestion de projets.</p>
+                </div>
+            </div>
+    
+            <!-- SQL Developer -->
+            <div class="competence-item" onclick="toggleDescription('sqlDev-desc')">
+                <p>SQL Developer</p>
+                <img class="competence-img" src="img/sqlDev_logo.jpg" alt="SQL Developer logo">
+                <div id="sqlDev-desc" class="competence-desc">
+                    <p>SQL Developer est un outil graphique d'Oracle pour développer et gérer des bases de données SQL.</p>
+                </div>
+            </div>
+    
+            <!-- Ubuntu -->
+            <div class="competence-item" onclick="toggleDescription('ubuntu-desc')">
+                <p>Ubuntu</p>
+                <img class="competence-img" src="img/ubuntu_logo.jpg" alt="Ubuntu logo">
+                <div id="ubuntu-desc" class="competence-desc">
+                    <p>Ubuntu est un système d'exploitation Linux populaire, utilisé pour le développement et les serveurs.</p>
+                </div>
+            </div>
+    
+            <!-- VSCode -->
+            <div class="competence-item" onclick="toggleDescription('vscode-desc')">
+                <p>Visual Studio Code</p>
+                <img class="competence-img" src="img/vscode_logo.jpg" alt="Visual Studio Code logo">
+                <div id="vscode-desc" class="competence-desc">
+                    <p>Visual Studio Code est un éditeur de code source gratuit, avec un large support d'extensions.</p>
+                </div>
+            </div>
+            <!-- Git -->
+            <div class="competence-item" onclick="toggleDescription('git-desc')">
+                <p>Git</p>
+                <img class="competence-img" src="img/git_logo.jpg" alt="Git logo">
+                <div id="git-desc" class="competence-desc">
+                    <p>Git est un logiciel de gestion de versions décentralisé. C'est un logiciel libre et gratuit.</p>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <script src="js/scripts.js"></script>
 
     <section class="parcours">
@@ -113,23 +217,34 @@
             <div class="timeline-item">
                 <div class="timeline-icon"></div>
                 <div class="timeline-content">
-                    <h3>Baccalauréat</h3>
+                    <h3>Baccalauréat 
+                        <span class="toggle-arrow" id="baccalaureat-arrow" onclick="toggleDetail('baccalaureat-details', 'baccalaureat-arrow')">▶</span>
+                    </h3>
                     <p><a href="https://lyc-bazin.monbureaunumerique.fr/">Lycée François-Bazin</a>, Charleville-Mézières</p>
                     <span class="timeline-date">2020 / 2023</span>
+                    <div id="baccalaureat-details" class="timeline-detail" style="display: none;">
+                        <p>Mention : Assez bien</p>
+                        <p>Spécialités : Mathématiques, NSI, SI (abandonné en fin de 2ème année)</p>
+                    </div>
                 </div>
             </div>
+            
             
             <div class="timeline-item">
                 <div class="timeline-icon"></div>
                 <div class="timeline-content">
-                    <h3>Brevet des collèges</h3>
-                    <p><a href="https://clg-blanc-marais.monbureaunumerique.fr/">College du Blanc-Marais</a>, Rimogne</p>
+                    <h3>Brevet des collèges 
+                        <span class="toggle-arrow" id="brevet-arrow" onclick="toggleDetail('brevet-details', 'brevet-arrow')">▶</span>
+                    </h3>
+                    <p><a href="https://clg-blanc-marais.monbureaunumerique.fr/">Collège du Blanc-Marais</a>, Rimogne</p>
                     <span class="timeline-date">2016 / 2020</span>
+                    <div id="brevet-details" class="timeline-detail" style="display: none;">
+                        <p>Mention : Très bien</p>
+                    </div>
                 </div>
-            </div>
+            </div>            
         </div>
-    </section>
-    
+    </section>    
 </body>
 </html>
 
