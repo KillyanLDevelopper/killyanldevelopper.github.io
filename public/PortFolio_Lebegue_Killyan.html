@@ -45,10 +45,10 @@
         </div>
 
         <!-- Catégorie Langages -->
-        <h3>Langages</h3>
+        <h3 data-category="languages">Langages</h3>
         <div class="competences_lst">
             <!-- Python -->
-            <div class="competence-item" onclick="toggleDescription('python-desc')">
+            <div class="competence-item" onclick="toggleDescription('python-desc')" data-category="languages">
                 <p>Python</p>
                 <img class="competence-img" src="img/python-logo.jpg" alt="Python logo">
                 <div id="python-desc" class="competence-desc">
@@ -57,7 +57,7 @@
             </div>
     
             <!-- SQL -->
-            <div class="competence-item" onclick="toggleDescription('sql-desc')">
+            <div class="competence-item" onclick="toggleDescription('sql-desc')" data-category="languages">
                 <p>SQL</p>
                 <img class="competence-img" src="img/oracle-logo.jpg" alt="SQL logo">
                 <div id="sql-desc" class="competence-desc">
@@ -66,7 +66,7 @@
             </div>
     
             <!-- PHP -->
-            <div class="competence-item" onclick="toggleDescription('php-desc')">
+            <div class="competence-item" onclick="toggleDescription('php-desc')" data-category="languages">
                 <p>PHP</p>
                 <img class="competence-img" src="img/php.jpg" alt="PHP logo">
                 <div id="php-desc" class="competence-desc">
@@ -75,7 +75,7 @@
             </div>
     
             <!-- HTML -->
-            <div class="competence-item" onclick="toggleDescription('html-desc')">
+            <div class="competence-item" onclick="toggleDescription('html-desc')" data-category="languages">
                 <p>HTML</p>
                 <img class="competence-img" src="img/HTML5_logo.jpg" alt="HTML logo">
                 <div id="html-desc" class="competence-desc">
@@ -84,7 +84,7 @@
             </div>
     
             <!-- CSS -->
-            <div class="competence-item" onclick="toggleDescription('css-desc')">
+            <div class="competence-item" onclick="toggleDescription('css-desc')" data-category="languages">
                 <p>CSS</p>
                 <img class="competence-img" src="img/css_logo.jpg" alt="CSS logo">
                 <div id="css-desc" class="competence-desc">
@@ -93,20 +93,30 @@
             </div>
     
             <!-- C++ -->
-            <div class="competence-item" onclick="toggleDescription('cpp-desc')">
+            <div class="competence-item" onclick="toggleDescription('cpp-desc')" data-category="languages">
                 <p>C++</p>
                 <img class="competence-img" src="img/cpp_logo.jpg" alt="CPP logo">
                 <div id="cpp-desc" class="competence-desc">
                     <p>C++ est un langage orienté objet utilisé pour les logiciels de haute performance, y compris les jeux vidéo.</p>
                 </div>
             </div>
+
+            <!-- Markdown -->
+            <div class="competence-item" onclick="toggleDescription('markdown-desc')" data-category="languages">
+                <p>Markdown</p>
+                <img class="competence-img" src="img/markdown_logo.jpg" alt="Markdown logo">
+                <div id="markdown-desc" class="competence-desc">
+                    <p>Markdown est un langage de balisage léger, utilisé pour formater des fichiers textes.</p>
+                </div>
+            </div>
         </div>
-    
+<!-- ******************************************************************************************-->
+
         <!-- Catégorie Frameworks -->
-        <h3>Frameworks</h3>
+        <h3 data-category="frameworks">Frameworks</h3>
         <div class="competences_lst">
             <!-- Symfony -->
-            <div class="competence-item" onclick="toggleDescription('symfony-desc')">
+            <div class="competence-item" onclick="toggleDescription('symfony-desc')" data-category="frameworks">
                 <p>Symfony</p>
                 <img class="competence-img" src="img/symfony_logo.jpg" alt="Symfony logo">
                 <div id="symfony-desc" class="competence-desc">
@@ -115,29 +125,22 @@
             </div>
         </div>
     
+<!--********************************************************************************************************************************-->
+
         <!-- Catégorie Logiciels -->
-        <h3>Logiciels</h3>
+        <h3 data-category="tools">Logiciels</h3>
         <div class="competences_lst">
             <!-- Jupyter -->
-            <div class="competence-item" onclick="toggleDescription('jupyter-desc')">
+            <div class="competence-item" onclick="toggleDescription('jupyter-desc')" data-category="tools">
                 <p>Jupyter</p>
-                <img class="competence-img" src="img/jupyter_logo.jpg" alt="Jupyter logo">
+                <img class="competence-img" src="img/jupyter_logo.jpg" alt="Jupyter logo" >
                 <div id="jupyter-desc" class="competence-desc">
                     <p>Jupyter est un environnement interactif pour la data science, permettant d'exécuter du code en direct.</p>
                 </div>
             </div>
     
-            <!-- Markdown -->
-            <div class="competence-item" onclick="toggleDescription('markdown-desc')">
-                <p>Markdown</p>
-                <img class="competence-img" src="img/markdown_logo.jpg" alt="Markdown logo">
-                <div id="markdown-desc" class="competence-desc">
-                    <p>Markdown est un langage de balisage léger, utilisé pour formater des fichiers textes.</p>
-                </div>
-            </div>
-    
             <!-- Oracle -->
-            <div class="competence-item" onclick="toggleDescription('oracle-desc')">
+            <div class="competence-item" onclick="toggleDescription('oracle-desc')" data-category="tools">
                 <p>Oracle</p>
                 <img class="competence-img" src="img/oracle-logo.jpg" alt="Oracle logo">
                 <div id="oracle-desc" class="competence-desc">
@@ -146,7 +149,7 @@
             </div>
     
             <!-- PhpStorm -->
-            <div class="competence-item" onclick="toggleDescription('phpstorm-desc')">
+            <div class="competence-item" onclick="toggleDescription('phpstorm-desc')" data-category="tools">
                 <p>PhpStorm</p>
                 <img class="competence-img" src="img/phpstorm_logo.jpg" alt="PhpStorm logo">
                 <div id="phpstorm-desc" class="competence-desc">
@@ -155,7 +158,7 @@
             </div>
     
             <!-- PyCharm -->
-            <div class="competence-item" onclick="toggleDescription('pycharm-desc')">
+            <div class="competence-item" onclick="toggleDescription('pycharm-desc')" data-category="tools">
                 <p>PyCharm</p>
                 <img class="competence-img" src="img/pycharm_logo.jpg" alt="PyCharm logo">
                 <div id="pycharm-desc" class="competence-desc">
@@ -164,7 +167,7 @@
             </div>
     
             <!-- SQL Developer -->
-            <div class="competence-item" onclick="toggleDescription('sqlDev-desc')">
+            <div class="competence-item" onclick="toggleDescription('sqlDev-desc')" data-category="tools">
                 <p>SQL Developer</p>
                 <img class="competence-img" src="img/sqlDev_logo.jpg" alt="SQL Developer logo">
                 <div id="sqlDev-desc" class="competence-desc">
@@ -173,7 +176,7 @@
             </div>
     
             <!-- Ubuntu -->
-            <div class="competence-item" onclick="toggleDescription('ubuntu-desc')">
+            <div class="competence-item" onclick="toggleDescription('ubuntu-desc')" data-category="tools">
                 <p>Ubuntu</p>
                 <img class="competence-img" src="img/ubuntu_logo.jpg" alt="Ubuntu logo">
                 <div id="ubuntu-desc" class="competence-desc">
@@ -182,7 +185,7 @@
             </div>
     
             <!-- VSCode -->
-            <div class="competence-item" onclick="toggleDescription('vscode-desc')">
+            <div class="competence-item" onclick="toggleDescription('vscode-desc')" data-category="tools">
                 <p>Visual Studio Code</p>
                 <img class="competence-img" src="img/vscode_logo.jpg" alt="Visual Studio Code logo">
                 <div id="vscode-desc" class="competence-desc">
@@ -190,7 +193,7 @@
                 </div>
             </div>
             <!-- Git -->
-            <div class="competence-item" onclick="toggleDescription('git-desc')">
+            <div class="competence-item" onclick="toggleDescription('git-desc')" data-category="tools">
                 <p>Git</p>
                 <img class="competence-img" src="img/git_logo.jpg" alt="Git logo">
                 <div id="git-desc" class="competence-desc">

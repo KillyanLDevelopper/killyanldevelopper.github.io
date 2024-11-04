@@ -33,22 +33,52 @@ function toggleDetail(detailId, arrowId) {
 }
 
 function filterCategory(category) {
-    const cards = document.querySelectorAll('.competence-card');
     const buttons = document.querySelectorAll('.filter-btn');
-    
-    // Activer/désactiver le bouton
+    const headings = document.querySelectorAll('.competences h3[data-category]');
+    const competenceLists = document.querySelectorAll('.competences .competences_lst[data-category]');
+    const competenceItems = document.querySelectorAll('.competences .competence-item[data-category]');
+
+    // Activer/désactiver le bouton sélectionné
     buttons.forEach(btn => btn.classList.remove('active'));
     document.querySelector(`[onclick="filterCategory('${category}')"]`).classList.add('active');
 
-    // Filtrer les cartes
-    cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-            card.style.display = 'block';
+    // Affichage et masquage des titres <h3> associés
+    headings.forEach(heading => {
+        const headingCategory = heading.getAttribute('data-category');
+
+        if (category === 'all' || headingCategory === category) {
+            heading.style.display = 'block';  // Affiche le titre <h3>
         } else {
-            card.style.display = 'none';
+            heading.style.display = 'none';  // Cache le titre <h3>
+        }
+    });
+
+    // Affichage et masquage des listes de compétences
+    competenceLists.forEach(list => {
+        const listCategory = list.getAttribute('data-category');
+
+        if (category === 'all' || listCategory === category) {
+            list.style.display = 'flex';  // Affiche la liste de compétences
+        } else {
+            list.style.display = 'none';  // Cache la liste de compétences
+        }
+    });
+
+    // Affichage et masquage des éléments de compétence individuels
+    competenceItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+
+        if (category === 'all' || itemCategory === category) {
+            item.style.display = 'block';  // Affiche l'élément de compétence
+        } else {
+            item.style.display = 'none';  // Cache l'élément de compétence
         }
     });
 }
+
+
+
+
 
 
 
