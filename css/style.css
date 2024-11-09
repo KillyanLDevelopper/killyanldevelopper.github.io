@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Styles généraux */
 body {
     font-family: "Montserrat";
     margin: 0;
@@ -13,7 +15,7 @@ h1 {
 .navigation {
     display: flex;
     font-size: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .header {
@@ -32,7 +34,6 @@ h1 {
 
 ul {
     list-style-type: none;
-
 }
 
 li {
@@ -43,9 +44,11 @@ img {
     height: 64px;
     width: 64px;
 }
-.pres_killyan{
+
+.pres_killyan {
     font-size: 30px;
 }
+
 .pres, .comp, .parc {
     font-size: 40px;
 }
@@ -73,47 +76,6 @@ img {
     border-bottom: 2px solid #000000;
 }
 
-/* Grille de compétences */
-.competences-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
-}
-
-.competence-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.competence-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-}
-
-.competence-card img {
-    max-width: 50px;
-    margin-bottom: 10px;
-}
-
-.competence-card p {
-    font-size: 18px;
-    color: black;
-}
-
-/* Cacher les compétences en fonction des filtres */
-.competence-card[data-category] {
-    display: none;
-}
-
-.competence-card[data-category="all"], .competence-card[data-category~="languages"],
-.competence-card[data-category~="frameworks"], .competence-card[data-category~="tools"] {
-    display: block;
-}
 .competences_lst {
     display: flex;
     overflow-x: auto;
@@ -128,12 +90,13 @@ img {
 }
 
 .competence-item.active .competence-img {
-    transform: scale(1.3); 
+    transform: scale(1.3);
 }
+
 .competence-img {
     width: 100px;
     height: 100px;
-    object-fit: contain; 
+    object-fit: contain;
 }
 
 .competence-desc {
@@ -144,83 +107,3 @@ img {
     border-radius: 5px;
     margin-top: 10px;
 }
-
-.parcours {
-    font-family: "Montserrat", sans-serif;
-    margin: 2em 0;
-}
-
-.timeline {
-    position: relative;
-    margin-left: 50px;
-    padding-left: 20px;
-    border-left: 3px solid #ccc;
-}
-
-.timeline-item {
-    position: relative;
-    margin: 2em 0;
-    padding-left: 30px;
-}
-
-.timeline-icon {
-    position: absolute;
-    left: -25px;
-    width: 20px;
-    height: 20px;
-    background-color: #0056b3; /* Couleur du point */
-    border-radius: 50%;
-    border: 3px solid white;
-    top: 5px;
-}
-
-.timeline-content {
-    padding: 10px 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-content h3 {
-    font-size: 1.2em;
-    margin: 0;
-    font-weight: bold;
-}
-
-.timeline-content p {
-    font-size: 0.9em;
-    color: #666;
-    margin: 5px 0;
-}
-
-.timeline-date {
-    font-size: 0.9em;
-    color: #999;
-    display: block;
-    margin-top: 5px;
-    font-weight: bold;
-}
-.timeline-detail {
-    padding: 10px;
-    margin-top: 5px;
-    background-color: #f1f1f1;
-    border-left: 2px solid #ccc;
-    font-size: 0.9em;
-    color: #666;
-    border-radius: 5px;
-}
-.timeline-content h3 {
-    cursor: pointer;
-}
-
-.toggle-arrow {
-    font-size: 1.2em;
-    cursor: pointer;
-    margin-left: 8px;
-    transition: transform 0.3s;
-}
-
-.toggle-arrow.open {
-    transform: rotate(90deg);
-}
-
