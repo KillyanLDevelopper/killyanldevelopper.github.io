@@ -27,13 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: $name <$email>";
 
     // Envoi de l'email
-    if (mail($recipient, $subject, $emailContent, $headers)) {
-        header("Location: index.html?success=Votre message a été envoyé avec succès !");
-    } else {
-        header("Location: index.html?error=Une erreur est survenue lors de l'envoi du message.");
-    }
+    // Redirection après le traitement
+if (mail($recipient, $subject, $emailContent, $headers)) {
+    header("Location: contact.php?success=Votre message a été envoyé avec succès !");
+} else {
+    header("Location: contact.php?error=Une erreur est survenue lors de l'envoi du message.");
+}
+exit;
+
 } else {
     // Redirection si le formulaire n'est pas soumis
     header("Location: index.html");
 }
-?>
