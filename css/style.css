@@ -246,8 +246,6 @@ img {
     padding-top: 20px;
 }
 
-/* Carte de projet */
-/* Carte de projet */
 .project-card {
     background-color: #fff;
     border-radius: 8px;
@@ -256,10 +254,10 @@ img {
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* S'assure que le lien reste en bas */
+    justify-content: space-between; 
     align-items: center;
     text-align: center;
-    height: 100%; /* Permet une taille uniforme des cartes */
+    height: 100%; 
 }
 
 .project-card:hover {
