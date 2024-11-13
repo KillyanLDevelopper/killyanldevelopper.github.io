@@ -76,6 +76,32 @@ function filterCategory(category) {
     });
 }
 
+// Fonction pour basculer entre mode clair et sombre
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode'); // Ajoute ou retire la classe "dark-mode" au body
+    
+    // Enregistre la préférence de l'utilisateur dans le localStorage
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Fonction pour appliquer le thème au chargement de la page
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode'); // Mode clair par défaut
+    }
+}
+
+document.addEventListener('DOMContentLoaded', applySavedTheme);
+
 
 
 

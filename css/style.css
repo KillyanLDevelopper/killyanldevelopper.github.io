@@ -10,6 +10,23 @@ body {
     line-height: 1.6;
 }
 
+/* Mode sombre */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .competence-item {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .contact-form {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+
 /* Header */
 .header {
     background-color: #0056b3;
@@ -130,6 +147,7 @@ body {
     cursor: pointer;
     text-align: center;
     word-wrap: break-word;
+    white-space: normal;
 }
 
 .competence-item:hover {
@@ -453,3 +471,144 @@ body {
         font-size: 14px;
     }
 }
+/* Mode Sombre */
+
+.theme-toggle button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.theme-toggle button:hover {
+    background-color: #0056b3;
+}
+/* Mode sombre - fond plus foncé pour l'en-tête */
+.dark-mode header {
+    background-color: #1c1c1c;
+    border-bottom: 2px solid #444;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode p {
+    color: #e0e0e0;
+}
+
+/* Style du bouton de bascule de mode clair/sombre */
+.theme-toggle button {
+    background-color: #444;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+.dark-mode nav a {
+    color: #e0e0e0;
+}
+
+.dark-mode nav a:hover {
+    color: #ffd700; 
+}
+
+.dark-mode section {
+    background-color: #222;
+}
+
+.dark-mode button, .dark-mode .competence-item {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+.dark-mode button:hover, .dark-mode .competence-item:hover {
+    background-color: #444;
+}
+
+/* Mode sombre - style des boîtes de projet */
+.dark-mode .project-card {
+    background-color: #2a2a2a; /* Fond légèrement plus clair pour les boîtes */
+    color: #ffff; /* Couleur du texte pour meilleur contraste */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Titre des projets en mode sombre */
+.dark-mode .project-card h3 {
+    color: #ffffff; /* Couleur blanche pour le titre */
+    font-weight: bold;
+}
+
+/* Texte de description en mode sombre */
+.dark-mode .project-card p {
+    color: #ffffff; /* Couleur légèrement plus claire pour le texte */
+}
+
+/* Bouton "Accès au projet" */
+.dark-mode .project-card .btn {
+    background-color: #0056b3; /* Bleu légèrement plus sombre */
+    color: #007bff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dark-mode .project-card .btn:hover {
+    background-color: #004494;
+}
+
+/* Ajouter une légère bordure pour délimiter */
+.dark-mode .project-card {
+    border: 1px solid #444;
+}
+
+/* Mode sombre - style des boîtes de parcours */
+.dark-mode .timeline-content {
+    background-color: #2a2a2a; 
+    color: #e0e0e0; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Titre de la section Parcours en mode sombre */
+.dark-mode .timeline-content h3 {
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+/* Texte de description en mode sombre */
+.dark-mode .timeline-content p {
+    color: #cccccc; 
+}
+/* Texte du lien en mode sombre */
+.dark-mode .timeline-content a {
+    color: #007bff; 
+}
+
+/* Bouton (s'il y a des boutons dans cette section) */
+.dark-mode .timeline-content .btn {
+    background-color: #0056b3; 
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dark-mode .timeline-content .btn:hover {
+    background-color: #004494; 
+}
+
+/* Ajouter une légère bordure pour délimiter */
+.dark-mode .timeline-content {
+    border: 1px solid #444;
+}
+
+
