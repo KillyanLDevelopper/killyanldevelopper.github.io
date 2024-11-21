@@ -148,6 +148,8 @@ body.dark-mode {
     text-align: center;
     word-wrap: break-word;
     white-space: normal;
+    width: 150px;
+    height: 150px;
 }
 
 .competence-item:hover {
@@ -365,6 +367,8 @@ body.dark-mode {
         padding: 15px;
         width: 180;
         height: 180;
+        width: 100px;
+        height: 180px;
     }
 
     .filter-menu{
