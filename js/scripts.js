@@ -96,8 +96,123 @@ function applySavedTheme() {
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
     } else {
-        document.body.classList.remove('dark-mode'); // Mode clair par défaut
+        document.body.classList.remove('dark-mode');
     }
+}
+
+function toggleShowMore(section) {
+    let container, button;
+    
+    if (section === 'outils') {
+        container = document.querySelector('.competences .competences_lst');
+        button = document.getElementById('outils-show-more');
+    } else if (section === 'competences') {
+        container = document.querySelector('.skills-section .skills-list');
+        button = document.getElementById('competences-show-more');
+    }
+    
+    if (container && button) {
+        if (container.classList.contains('show-all')) {
+            container.classList.remove('show-all');
+            button.textContent = 'Voir plus';
+            
+            if (section === 'outils') {
+                document.querySelector('.competences').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                document.querySelector('.skills-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        } else {
+            container.classList.add('show-all');
+            button.textContent = 'Voir moins';
+        }
+    }
+}
+
+// Initialisation EmailJS
+(function() {
+    emailjs.init("bvP1r4XlEaay1Lu0N");
+})();
+
+// Gestion du formulaire de contact
+document.addEventListener('DOMContentLoaded', function() {
+    applySavedTheme();
+    initScrollToTop();
+    initScrollAnimations();
+    
+    const contactForm = document.getElementById('contact-form');
+    const statusDiv = document.getElementById('contact-status');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+            
+            statusDiv.textContent = '';
+            statusDiv.className = 'contact-status';
+            
+            emailjs.sendForm('service_q7ez05c', 'template_h7z0hpv', this)
+                .then(function() {
+                    statusDiv.textContent = '✓ Message envoyé avec succès !';
+                    statusDiv.className = 'contact-status success';
+                    contactForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Envoyer';
+                }, function(error) {
+                    statusDiv.textContent = '✗ Erreur lors de l\'envoi. Veuillez réessayer.';
+                    statusDiv.className = 'contact-status error';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Envoyer';
+                    console.error('Erreur EmailJS:', error);
+                });
+        });
+    }
+});
+
+// Bouton retour en haut
+function initScrollToTop() {
+    const scrollBtn = document.getElementById('scroll-to-top');
+    
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+// Animations au scroll
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', applySavedTheme);

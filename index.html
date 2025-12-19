@@ -1,52 +1,79 @@
 <!doctype html>
 <html lang="fr">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Killyan Lebègue, étudiant en BUT Informatique spécialisé en développement web. Découvrez mes projets, compétences et parcours.">
+    <meta name="keywords" content="Killyan Lebègue, développeur web, portfolio, BUT Informatique, développement web, Python, PHP, JavaScript, React, Symfony">
+    <meta name="author" content="Killyan Lebègue">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://killyanldevelopper.github.io/">
+    <meta property="og:title" content="Portfolio Killyan Lebègue - Développeur Web">
+    <meta property="og:description" content="Étudiant en BUT Informatique spécialisé en développement web. Découvrez mes projets et compétences.">
+    <meta property="og:image" content="https://killyanldevelopper.github.io/img/Killyan.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://killyanldevelopper.github.io/">
+    <meta property="twitter:title" content="Portfolio Killyan Lebègue - Développeur Web">
+    <meta property="twitter:description" content="Étudiant en BUT Informatique spécialisé en développement web. Découvrez mes projets et compétences.">
+    <meta property="twitter:image" content="https://killyanldevelopper.github.io/img/Killyan.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    
     <link rel="stylesheet" href="css/style.css">
-    <title>Portfolio Killyan Lebègue</title>
+    <title>Portfolio Killyan Lebègue - Développeur Web</title>
 </head>
 <body>
     <header class="header">
         <section class="Titre">
-            <h1>Killyan Lebegue</h1>
-            <img class="Killyan" src="img/Killyan.jpg" alt="Photo de Killyan">
+            <h1>Killyan Lebègue</h1>
+            <img class="Killyan" src="img/Killyan.jpg" alt="Photo de Killyan Lebègue, développeur web">
             <div class="theme-toggle">
-                <button onclick="toggleDarkMode()">🌞/🌜 Mode</button>
+                <button onclick="toggleDarkMode()" aria-label="Basculer entre le mode clair et le mode sombre">🌞/🌜 Mode</button>
             </div>
         </section>
     </header>
     
-    <ul class="navigation">
-        
-        <li><a href="#presentation" class="nav_link">Présentation</a></li>
-        <li><a href="#competences" class="nav_link">Compétences</a></li>
-        <li><a href="#parcours" class="nav_link">Parcours</a></li>
-        <li><a href="#projets" class="nav_link">Projets</a></li>
-        <li><a href="#contact" class="nav_link">Contact</a></li>
-    </ul>
+    <nav aria-label="Navigation principale">
+        <ul class="navigation">
+            
+            <li><a href="#presentation" class="nav_link">Présentation</a></li>
+            <li><a href="#outils" class="nav_link">Outils</a></li>
+            <li><a href="#competences" class="nav_link">Compétences</a></li>
+            <li><a href="#experiences" class="nav_link">Expériences</a></li>
+            <li><a href="#parcours" class="nav_link">Parcours</a></li>
+            <li><a href="#cv" class="nav_link">CV</a></li>
+            <li><a href="#projets" class="nav_link">Projets</a></li>
+            <li><a href="#contact" class="nav_link">Contact</a></li>
+        </ul>
+    </nav>
 
     <section class="presentation">
         <p id="presentation" class="pres"><b>Présentation</b></p>
-        <p class="pres_killyan">Je suis Killyan Lebegue, étudiant en deuxième année de BUT Informatique à l'IUT RCC,
-            où je me spécialise dans le développement avec une préférence pour le langage C++. Au cours de ma formation,
-            j’ai acquis des compétences dans plusieurs langages de programmation tels que Python, C++, PHP, SQL, HTML et
+        <p class="pres_killyan">Je suis Killyan Lebegue, étudiant en troisième année de BUT Informatique à l'IUT RCC,
+            où je me spécialise dans le développement web. Au cours de ma formation,
+            j’ai acquis des compétences dans plusieurs langages de programmation tels que Python, C++, PHP, SQL, HTML, JavaScript, TypeScript et
             CSS,
             ce qui me permet de travailler sur une variété de projets,
-            allant du développement d’applications web à la gestion de bases de données.
+            allant du développement d’applications web back-end et front-end à la gestion de bases de données.
             Mon objectif à long terme est de devenir développeur de jeux vidéo.
             J’ai toujours été passionné par cet univers et je souhaite pouvoir créer mes propres jeux,
             en mettant à profit mes connaissances techniques et mon goût pour l’innovation.</p>
     </section>
 
     <section class="competences">
-        <p id="competences" class="comp"><b>Compétences</b></p>
+        <p id="outils" class="comp"><b>Outils</b></p>
         
         <div class="filter-menu">
             <button class="filter-btn active" onclick="filterCategory('all')">Tous</button>
             <button class="filter-btn" onclick="filterCategory('languages')">Langages</button>
             <button class="filter-btn" onclick="filterCategory('frameworks')">Frameworks</button>
-            <button class="filter-btn" onclick="filterCategory('tools')">Logiciels</button>
+            <button class="filter-btn" onclick="filterCategory('tools')">Outils</button>
         </div>
 
         <!-- Catégorie Langages -->
@@ -114,6 +141,24 @@
                     <p>Markdown est un langage de balisage léger, utilisé pour formater des fichiers textes.</p>
                 </div>
             </div>
+
+            <!-- JavaScript -->
+            <div class="competence-item" onclick="toggleDescription('javascript-desc')" data-category="languages">
+                <p>JavaScript</p>
+                <img class="competence-img" src="img/javascript_logo.png" alt="JavaScript logo">
+                <div id="javascript-desc" class="competence-desc">
+                    <p>JavaScript est un langage de programmation utilisé pour rendre les pages web interactives.</p>
+                </div>
+            </div>
+
+            <!-- TypeScript -->
+            <div class="competence-item" onclick="toggleDescription('typescript-desc')" data-category="languages">
+                <p>TypeScript</p>
+                <img class="competence-img" src="img/typescript_logo.png" alt="TypeScript logo">
+                <div id="typescript-desc" class="competence-desc">
+                    <p>TypeScript est un sur-ensemble de JavaScript ajoutant le typage statique pour un code plus robuste.</p>
+                </div>
+            </div>
         </div>
 <!-- ******************************************************************************************-->
 
@@ -126,6 +171,15 @@
                 <img class="competence-img" src="img/symfony_logo.jpg" alt="Symfony logo">
                 <div id="symfony-desc" class="competence-desc">
                     <p>Symfony est un framework PHP facilitant le développement d'applications web robustes et modulaires.</p>
+                </div>
+            </div>
+
+            <!-- React -->
+            <div class="competence-item" onclick="toggleDescription('react-desc')" data-category="frameworks">
+                <p>React</p>
+                <img class="competence-img" src="img/react_logo.png" alt="React logo">
+                <div id="react-desc" class="competence-desc">
+                    <p>React est une bibliothèque JavaScript pour créer des interfaces utilisateur interactives et performantes.</p>
                 </div>
             </div>
         </div>
@@ -206,9 +260,105 @@
                 </div>
             </div>
         </div>
+        <button class="show-more-btn" id="outils-show-more" onclick="toggleShowMore('outils')">Voir plus</button>
+    </section>
+
+    <section class="skills-section">
+        <p id="competences" class="skills-title"><b>Compétences Transversales</b></p>
+        
+        <div class="skills-list">
+            <div class="skill-item">
+                <h4>Développement d'applications complètes</h4>
+                <p>Conception et implémentation d'applications informatiques de la spécification jusqu'au déploiement, en respectant les bonnes pratiques de développement et les normes de qualité.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Conception et développement d'interfaces utilisateur</h4>
+                <p>Création d'interfaces web responsive et intuitives en respectant les principes UX/UI pour garantir une expérience utilisateur optimale.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Gestion et administration de bases de données</h4>
+                <p>Conception, modélisation, exploitation et administration de bases de données relationnelles avec optimisation des requêtes et garantie de l'intégrité des données.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Administration systèmes et réseaux</h4>
+                <p>Installation, configuration et surveillance de systèmes informatiques et réseaux avec prise en compte des aspects de sécurité et de performance.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Sécurisation des systèmes informatiques</h4>
+                <p>Mise en œuvre de solutions de sécurité pour protéger les systèmes et les données contre les vulnérabilités et les cybermenaces.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Gestion de projet et méthodologies Agile</h4>
+                <p>Organisation, planification et pilotage de projets informatiques en utilisant les méthodologies Agile Scrum pour une livraison itérative et collaborative.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Travail collaboratif en équipe</h4>
+                <p>Communication efficace et collaboration au sein d'équipes de développement en utilisant des outils de versioning (Git) et de gestion de projet.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Tests et validation logicielle</h4>
+                <p>Élaboration et exécution de tests unitaires, d'intégration et fonctionnels pour vérifier et valider la qualité des applications développées.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Documentation technique</h4>
+                <p>Rédaction de documentation claire et structurée (spécifications, guides utilisateurs, API) pour faciliter la maintenance et l'évolution des projets.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Veille technologique</h4>
+                <p>Maintien à jour des connaissances sur les évolutions technologiques, les nouveaux frameworks et les meilleures pratiques du développement web.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Analyse et résolution de problèmes</h4>
+                <p>Capacité à analyser des problématiques techniques complexes, identifier les causes et proposer des solutions efficaces et adaptées.</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Optimisation et performance</h4>
+                <p>Amélioration des performances des applications en optimisant les algorithmes, les requêtes et l'utilisation des ressources systèmes.</p>
+            </div>
+        </div>
+        <button class="show-more-btn" id="competences-show-more" onclick="toggleShowMore('competences')">Voir plus</button>
     </section>
     
     <script src="js/scripts.js"></script>
+
+    <section id="experiences" class="experiences-section">
+        <p class="exp-title"><b>Expériences & Stages</b></p>
+        
+        <div class="experiences-timeline">
+            <div class="experience-item">
+                <div class="experience-icon"></div>
+                <div class="experience-content">
+                    <h3>Stage Développeur Web
+                        <span class="toggle-arrow" id="stage-arrow" onclick="toggleDetail('stage-details', 'stage-arrow')">▶</span>
+                    </h3>
+                    <p class="experience-company">IREMI - Reims</p>
+                    <span class="experience-date">Avril 2025 - Juin 2025 (8 semaines)</span>
+                    <div id="stage-details" class="experience-detail" style="display: none;">
+                        <p><strong>Missions réalisées :</strong></p>
+                        <ul>
+                            <li>Création d'un planning et diagramme de GANTT</li>
+                            <li>Création et exploitation d'une base de données</li>
+                            <li>Développement de pages web dynamiques</li>
+                            <li>Gestion d'interfaces utilisateur</li>
+                            <li>Utilisation de logiciels de gestion de projet</li>
+                        </ul>
+                        <p><strong>Technologies utilisées :</strong> PHP, HTML, CSS, JavaScript, SQL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="parcours-section">
         <p id="parcours" class="parc"><b>Parcours</b></p>
@@ -222,7 +372,8 @@
                     <p><a href="https://www.univ-reims.fr/iut-rcc/">IUT Reims-Châlons-Charleville</a>, Reims</p>
                     <span class="timeline-date">2023 / ...</span>
                     <div id="but-details" class="timeline-detail" style="display: none;">
-                        <p>Parcours : dev C++</p>
+                        <p> 3ème année : Parcours : développement web</p>
+                        <p> 2ème année : Parcours : dev C++</p>
                     </div>
                 </div>
             </div>
@@ -259,6 +410,24 @@
         </div>
     </section>   
     
+    <section id="cv" class="cv-section">
+        <h2>Mon CV</h2>
+        <p>Téléchargez mon CV pour découvrir mon parcours complet, mes compétences et mes expériences professionnelles.</p>
+        <div class="cv-container">
+            <div class="cv-preview">
+                <img src="img/CV_preview.png" alt="Aperçu du CV">
+            </div>
+            <div class="cv-actions">
+                <a href="docs/LEBEGUE_Killyan_CV.pdf" download class="cv-btn download-btn">
+                    📥 Télécharger le CV (PDF)
+                </a>
+                <a href="docs/LEBEGUE_Killyan_CV.pdf" target="_blank" class="cv-btn view-btn">
+                    👁️ Voir le CV
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <section id="projets" class="projects-section">
         <h2>Mes Projets</h2>
         <div class="projects-grid">
@@ -294,15 +463,17 @@
         <h2>Contactez-moi</h2>
         <p>Si vous avez des questions, des propositions ou souhaitez en savoir plus sur mes projets, n'hésitez pas à me contacter en remplissant le formulaire ci-dessous.</p>
     
-        <form action="mailto:killyanlebegue000@gmail.com" method="GET" enctype="text/plain" class="contact-form">
+        <div id="contact-status" class="contact-status"></div>
+        
+        <form id="contact-form" class="contact-form">
             <div class="form-group">
                 <label for="name">Nom</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="from_name" required>
             </div>
             
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="from_email" required>
             </div>
             
             <div class="form-group">
@@ -317,9 +488,62 @@
             
             <button type="submit" class="submit-btn">Envoyer</button>
         </form>
-        
     </section>
+
+    <!-- Bouton Retour en haut -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut">
+        ↑
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Killyan Lebègue</h3>
+                <p>Étudiant en BUT Informatique</p>
+                <p>Développeur Web Passionné</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="#presentation">Présentation</a></li>
+                    <li><a href="#outils">Outils</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#parcours">Parcours</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Réseaux Sociaux</h3>
+                <div class="social-links">
+                    <a href="https://github.com/KillyanLDevelopper" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/killyan-lebegue-868b68326/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:killyanlebegue000@gmail.com" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Killyan Lebègue. Tous droits réservés.</p>
+        </div>
+    </footer>
     
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
 
