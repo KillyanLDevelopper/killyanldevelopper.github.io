@@ -245,14 +245,14 @@ h1, h2, h3{
 .tl-item ul li{ margin-bottom:4px; }
 
 /* ---------- Contact ---------- */
-.contact-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+.contact-grid{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:20px; }
 .contact-card{
   background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
-  padding:28px; display:flex; flex-direction:column; gap:6px;
+  padding:28px; display:flex; flex-direction:column; gap:6px; min-width:0;
   color:inherit; font:inherit; text-align:left; width:100%; cursor:pointer;
 }
 .contact-card .label{ font-family:var(--font-mono); font-size:.72rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.06em; }
-.contact-card .value{ font-size:1.1rem; font-weight:600; text-decoration:none; }
+.contact-card .value{ font-size:1.1rem; font-weight:600; text-decoration:none; overflow-wrap:anywhere; }
 .contact-card.primary{ grid-column:1 / -1; background:linear-gradient(135deg, var(--violet), var(--teal)); color:#0B0E14; }
 .contact-card.primary .label{ color:rgba(11,14,20,.65); }
 .contact-card.primary .value{ font-size:1.3rem; }
@@ -306,7 +306,7 @@ footer p{ font-family:var(--font-mono); font-size:.78rem; color:var(--text-muted
   .about-grid{ grid-template-columns:1fr; }
   .skills-grid{ grid-template-columns:1fr; }
   .projects-grid{ grid-template-columns:1fr; }
-  .contact-grid{ grid-template-columns:1fr; }
+  .contact-grid{ grid-template-columns:minmax(0, 1fr); }
 }
 
 @media (max-width: 720px){
