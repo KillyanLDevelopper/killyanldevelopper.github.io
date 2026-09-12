@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://killyanldevelopper.github.io/sitemap.xml

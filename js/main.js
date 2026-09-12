@@ -75,7 +75,6 @@
       "contact.title": "Let’s work together",
       "contact.desc": "A question, a project, an idea to collaborate on? Reach out, I reply quickly.",
       "contact.emailLabel": "Email",
-      "contact.phoneLabel": "Phone",
       "contact.cvLabel": "Resume",
       "contact.cvValue": "View preview →",
 
