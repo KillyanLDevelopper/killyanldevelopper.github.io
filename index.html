@@ -1,559 +1,362 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Killyan Lebègue, étudiant en BUT Informatique spécialisé en développement web. Découvrez mes projets, compétences et parcours.">
-    <meta name="keywords" content="Killyan Lebègue, développeur web, portfolio, BUT Informatique, développement web, Python, PHP, JavaScript, React, Symfony">
-    <meta name="author" content="Killyan Lebègue">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://killyanldevelopper.github.io/">
-    <meta property="og:title" content="Portfolio Killyan Lebègue - Développeur Web">
-    <meta property="og:description" content="Étudiant en BUT Informatique spécialisé en développement web. Découvrez mes projets et compétences.">
-    <meta property="og:image" content="https://killyanldevelopper.github.io/img/Killyan.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://killyanldevelopper.github.io/">
-    <meta property="twitter:title" content="Portfolio Killyan Lebègue - Développeur Web">
-    <meta property="twitter:description" content="Étudiant en BUT Informatique spécialisé en développement web. Découvrez mes projets et compétences.">
-    <meta property="twitter:image" content="https://killyanldevelopper.github.io/img/Killyan.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    
-    <link rel="stylesheet" href="css/style.css">
-    <title>Portfolio Killyan Lebègue - Développeur Web</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Killyan Lebegue — Développeur Web</title>
+<meta name="description" content="Portfolio de Killyan Lebegue, développeur web front-end &amp; back-end, étudiant en BUT Informatique.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <section class="Titre">
-            <h1>Killyan Lebègue</h1>
-            <img class="Killyan" src="img/Killyan.jpg" alt="Photo de Killyan Lebègue, développeur web">
-            <div class="theme-toggle">
-                <button onclick="toggleDarkMode()" aria-label="Basculer entre le mode clair et le mode sombre">🌞/🌜 Mode</button>
-            </div>
-        </section>
-    </header>
-    
-    <nav aria-label="Navigation principale">
-        <ul class="navigation">
-            
-            <li><a href="#presentation" class="nav_link">Présentation</a></li>
-            <li><a href="#outils" class="nav_link">Outils</a></li>
-            <li><a href="#competences" class="nav_link">Compétences</a></li>
-            <li><a href="#experiences" class="nav_link">Expériences</a></li>
-            <li><a href="#parcours" class="nav_link">Parcours</a></li>
-            <li><a href="#cv" class="nav_link">CV</a></li>
-            <li><a href="#projets" class="nav_link">Projets</a></li>
-            <li><a href="#contact" class="nav_link">Contact</a></li>
-        </ul>
-    </nav>
 
-    <section class="presentation">
-        <p id="presentation" class="pres"><b>Présentation</b></p>
-        <p class="pres_killyan">Je suis Killyan Lebegue, étudiant en troisième année de BUT Informatique à l'IUT RCC,
-            où je me spécialise dans le développement web. Au cours de ma formation,
-            j’ai acquis des compétences dans plusieurs langages de programmation tels que Python, C++, PHP, SQL, HTML, JavaScript, TypeScript et
-            CSS,
-            ce qui me permet de travailler sur une variété de projets,
-            allant du développement d’applications web back-end et front-end à la gestion de bases de données.
-            Mon objectif à long terme est de devenir développeur de jeux vidéo.
-            J’ai toujours été passionné par cet univers et je souhaite pouvoir créer mes propres jeux,
-            en mettant à profit mes connaissances techniques et mon goût pour l’innovation.</p>
-    </section>
+<nav class="nav">
+  <div class="container">
+    <a href="#top" class="logo"><span class="brk">&lt;</span>KL<span class="sl">/</span><span class="brk">&gt;</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Expérience</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" data-lang="fr" class="active">FR</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button type="button" class="icon-btn" id="themeToggle" aria-label="Changer de thème">
+        <svg id="iconMoon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        <svg id="iconSun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" hidden><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+      </button>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu"><span></span></button>
+    </div>
+  </div>
+</nav>
 
-    <section class="competences">
-        <p id="outils" class="comp"><b>Outils</b></p>
-        
-        <div class="filter-menu">
-            <button class="filter-btn active" onclick="filterCategory('all')">Tous</button>
-            <button class="filter-btn" onclick="filterCategory('languages')">Langages</button>
-            <button class="filter-btn" onclick="filterCategory('frameworks')">Frameworks</button>
-            <button class="filter-btn" onclick="filterCategory('tools')">Outils</button>
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-blob"></div>
+    <div class="container">
+      <div>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Développeur web — Front-end &amp; Back-end</p>
+        <h1 data-i18n="hero.title">Bonjour, je suis <span class="accent">Killyan Lebegue</span></h1>
+        <p class="role" data-i18n="hero.role">&gt; front-end &amp;&amp; back-end developer</p>
+        <p class="lead" data-i18n="hero.lead">Étudiant en 3ᵉ année de BUT Informatique (parcours Développement Web) à l'IUT de Reims. Je conçois des interfaces claires et des back-ends robustes en JavaScript/TypeScript, PHP, Python et React.</p>
+        <div class="actions">
+          <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">Voir mes projets</a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Me contacter</a>
+        </div>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar"><span></span><span></span><span></span></div>
+        <div class="terminal-body">
+          <div><span class="k">const</span> dev = {</div>
+          <div>&nbsp;&nbsp;name: <span class="s">"Killyan Lebegue"</span>,</div>
+          <div>&nbsp;&nbsp;based: <span class="s">"Reims, FR"</span>,</div>
+          <div>&nbsp;&nbsp;stack: [<span class="s">"React"</span>, <span class="s">"Symfony"</span>, <span class="s">"Node"</span>],</div>
+          <div>&nbsp;&nbsp;goal: <span class="t" data-i18n="hero.terminalStatus">"devenir dev de jeux vidéo"</span></div>
+          <div>};</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="about.eyebrow">01 — À propos</p>
+        <h2 data-i18n="about.title">Qui je suis</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p data-i18n="about.p1">Étudiant en 3ᵉ année de <mark>BUT Informatique</mark>, parcours Développement Web, à l'IUT de Reims-Châlons-Charleville. Passionné par le développement web et le jeu vidéo, je conçois en parallèle plusieurs projets personnels qui illustrent mon <mark>autonomie</mark> et mon goût pour la création d'interfaces interactives.</p>
+          <p data-i18n="about.p2">Je mets en pratique mes compétences front-end et back-end sur des projets concrets, au sein d'une équipe où le respect et la bienveillance comptent autant que la réussite technique.</p>
+          <p data-i18n="about.p3">Mon objectif à long terme : devenir <mark>développeur de jeux vidéo</mark>. Passionné par cet univers depuis toujours, je veux un jour créer mes propres jeux en mettant à profit mes compétences techniques et mon goût pour l'innovation.</p>
+        </div>
+        <div class="about-facts">
+          <div class="fact">
+            <div class="label" data-i18n="about.fact1Label">Localisation</div>
+            <div class="value">Reims, France</div>
+          </div>
+          <div class="fact">
+            <div class="label" data-i18n="about.fact2Label">Langues</div>
+            <div class="value" data-i18n="about.fact2Value">Français (natif) · Anglais (B2)</div>
+          </div>
+          <div class="fact">
+            <div class="label" data-i18n="about.fact3Label">Centres d'intérêt</div>
+            <div class="value" data-i18n="about.fact3Value">Jeux vidéo · Sport · Musique</div>
+          </div>
+          <div class="fact">
+            <div class="label" data-i18n="about.fact4Label">Valeurs</div>
+            <div class="value" data-i18n="about.fact4Value">Respect · Bienveillance · Responsabilité · Autonomie · Réussite</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="skills.eyebrow">02 — Compétences</p>
+        <h2 data-i18n="skills.title">Ce que je maîtrise</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3><span class="dot" style="background:var(--violet)"></span><span data-i18n="skills.cat1">Langages</span></h3>
+          <div class="skill-tags">
+            <span class="tag">JavaScript / TypeScript</span>
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><span class="dot" style="background:var(--teal)"></span><span data-i18n="skills.cat2">Frameworks &amp; bibliothèques</span></h3>
+          <div class="skill-tags">
+            <span class="tag">React</span>
+            <span class="tag">Symfony</span>
+            <span class="tag">Node.js / Express</span>
+            <span class="tag">discord.js</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><span class="dot" style="background:var(--corail)"></span><span data-i18n="skills.cat3">Outils &amp; environnements</span></h3>
+          <div class="skill-tags">
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">VS Code · PhpStorm · PyCharm</span>
+            <span class="tag">Oracle SQL Developer</span>
+            <span class="tag">Linux / Windows</span>
+            <span class="tag">Vercel / Netlify</span>
+            <span class="tag">Jupyter</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><span class="dot" style="background:var(--ambre)"></span><span data-i18n="skills.cat4">Bases de données</span></h3>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="skills.db1">SQL / Oracle</span>
+            <span class="tag" data-i18n="skills.db2">Modélisation relationnelle</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="projects.eyebrow">03 — Projets</p>
+        <h2 data-i18n="projects.title">Projets personnels</h2>
+        <p data-i18n="projects.desc">Quelques projets développés en dehors des cours, seul, du prototype au déploiement.</p>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Covergle</h3>
+            <span class="project-idx">01</span>
+          </div>
+          <p data-i18n="projects.covergle">Plateforme web autour du streaming et du gaming, pour afficher et gérer des contenus liés aux utilisateurs et à des plateformes comme Twitch. Interfaces dynamiques, gestion des routes, des API et des données utilisateurs.</p>
+          <div class="skill-tags">
+            <span class="tag">Plateforme web</span>
+            <span class="tag">API</span>
+            <span class="tag">Gestion de contenu</span>
+          </div>
+          <div class="project-links">
+            <a href="https://covergle.fr" target="_blank" rel="noopener" data-i18n="projects.linkSite">Voir le site ↗</a>
+            <a href="https://github.com/KillyanLDevelopper/covergle" target="_blank" rel="noopener" data-i18n="projects.linkCode">Code source ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>VGWordle</h3>
+            <span class="project-idx">02</span>
+          </div>
+          <p data-i18n="projects.vgwordle">Jeu de devinettes inspiré du Wordle, repensé autour de l'univers du jeu vidéo. Développé en HTML, CSS et JavaScript vanilla (modules ES), avec un système de retour visuel coloré pour guider chaque tentative.</p>
+          <div class="skill-tags">
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">JavaScript (ES modules)</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/KillyanLDevelopper/VGWordle" target="_blank" rel="noopener" data-i18n="projects.linkCode">Code source ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Puissance 4</h3>
+            <span class="project-idx">03</span>
+          </div>
+          <p data-i18n="projects.puissance4">Jeu de Puissance 4 jouable en joueur contre joueur ou contre une IA, à partir d'une interface graphique fournie, codé pour être entièrement fonctionnel.</p>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="projects.tagGame">Jeu</span>
+            <span class="tag">IA</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/KillyanLDevelopper/connect_four" target="_blank" rel="noopener" data-i18n="projects.linkCode">Code source ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Whoz That</h3>
+            <span class="project-idx">04</span>
+          </div>
+          <p data-i18n="projects.whozthat">Jeu de type « Qui est-ce ? » basé sur une base de données Animal Crossing : l'ordinateur choisit un personnage et le joueur doit le retrouver en posant des questions prédéfinies.</p>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="projects.tagDb">Base de données</span>
+            <span class="tag" data-i18n="projects.tagLogic">Logique de jeu</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/KillyanLDevelopper/Whoz-That" target="_blank" rel="noopener" data-i18n="projects.linkCode">Code source ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Labyrinthe</h3>
+            <span class="project-idx">05</span>
+          </div>
+          <p data-i18n="projects.labyrinthe">Génération procédurale d'un labyrinthe en binôme, avec plusieurs algorithmes de génération différents et affichage du chemin correct selon différentes méthodes de résolution.</p>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="projects.tagAlgo">Algorithmique</span>
+            <span class="tag" data-i18n="projects.tagBinome">Projet en binôme</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/KillyanLDevelopper/Labyrinthe" target="_blank" rel="noopener" data-i18n="projects.linkCode">Code source ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>PHP CRUD TvShow</h3>
+            <span class="project-idx">06</span>
+          </div>
+          <p data-i18n="projects.tvshow">Projet de fin de 1ʳᵉ année réalisé en binôme en 3 jours : une application web pour explorer et modifier une base de données de séries TV.</p>
+          <div class="skill-tags">
+            <span class="tag">PHP</span>
+            <span class="tag" data-i18n="skills.db1">SQL</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/KillyanLDevelopper/php-crud-tvshow" target="_blank" rel="noopener" data-i18n="projects.linkCode">Code source ↗</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="experience.eyebrow">04 — Parcours</p>
+        <h2 data-i18n="experience.title">Expérience &amp; formation</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-date" data-i18n="experience.job1Date">Avril – Juin 2025 (8 semaines)</div>
+          <h3 data-i18n="experience.job1Title">Stagiaire Développeur Web</h3>
+          <div class="tl-org">IREMI, Reims</div>
+          <ul>
+            <li data-i18n="experience.job1a">Création d'un planning et d'un diagramme de GANTT</li>
+            <li data-i18n="experience.job1b">Création et exploitation d'une base de données</li>
+            <li data-i18n="experience.job1c">Développement de pages web dynamiques</li>
+            <li data-i18n="experience.job1d">Gestion d'interfaces utilisateur</li>
+          </ul>
         </div>
 
-        <!-- Catégorie Langages -->
-        <h3 data-category="languages">Langages</h3>
-        <div class="competences_lst">
-            <!-- Python -->
-            <div class="competence-item" onclick="toggleDescription('python-desc')" data-category="languages">
-                <p>Python</p>
-                <img class="competence-img" src="img/python-logo.jpg" alt="Python logo">
-                <div id="python-desc" class="competence-desc">
-                    <p>Python est un langage polyvalent idéal pour le développement web, la data science et l'automatisation.</p>
-                </div>
-            </div>
-    
-            <!-- SQL -->
-            <div class="competence-item" onclick="toggleDescription('sql-desc')" data-category="languages">
-                <p>SQL</p>
-                <img class="competence-img" src="img/oracle-logo.jpg" alt="SQL logo">
-                <div id="sql-desc" class="competence-desc">
-                    <p>SQL est un langage de requête utilisé pour manipuler et gérer des bases de données relationnelles.</p>
-                </div>
-            </div>
-    
-            <!-- PHP -->
-            <div class="competence-item" onclick="toggleDescription('php-desc')" data-category="languages">
-                <p>PHP</p>
-                <img class="competence-img" src="img/php.jpg" alt="PHP logo">
-                <div id="php-desc" class="competence-desc">
-                    <p>PHP est un langage de programmation largement utilisé pour le développement de sites web dynamiques.</p>
-                </div>
-            </div>
-    
-            <!-- HTML -->
-            <div class="competence-item" onclick="toggleDescription('html-desc')" data-category="languages">
-                <p>HTML</p>
-                <img class="competence-img" src="img/HTML5_logo.jpg" alt="HTML logo">
-                <div id="html-desc" class="competence-desc">
-                    <p>HTML est le langage standard pour créer des pages web et structurer leur contenu.</p>
-                </div>
-            </div>
-    
-            <!-- CSS -->
-            <div class="competence-item" onclick="toggleDescription('css-desc')" data-category="languages">
-                <p>CSS</p>
-                <img class="competence-img" src="img/css_logo.jpg" alt="CSS logo">
-                <div id="css-desc" class="competence-desc">
-                    <p>CSS est utilisé pour styliser les pages web et les rendre visuellement attrayantes.</p>
-                </div>
-            </div>
-    
-            <!-- C++ -->
-            <div class="competence-item" onclick="toggleDescription('cpp-desc')" data-category="languages">
-                <p>C++</p>
-                <img class="competence-img" src="img/cpp_logo.jpg" alt="CPP logo">
-                <div id="cpp-desc" class="competence-desc">
-                    <p>C++ est un langage orienté objet utilisé pour les logiciels de haute performance, y compris les jeux vidéo.</p>
-                </div>
-            </div>
-
-            <!-- Markdown -->
-            <div class="competence-item" onclick="toggleDescription('markdown-desc')" data-category="languages">
-                <p>Markdown</p>
-                <img class="competence-img" src="img/markdown_logo.jpg" alt="Markdown logo">
-                <div id="markdown-desc" class="competence-desc">
-                    <p>Markdown est un langage de balisage léger, utilisé pour formater des fichiers textes.</p>
-                </div>
-            </div>
-
-            <!-- JavaScript -->
-            <div class="competence-item" onclick="toggleDescription('javascript-desc')" data-category="languages">
-                <p>JavaScript</p>
-                <img class="competence-img" src="img/javascript_logo.png" alt="JavaScript logo">
-                <div id="javascript-desc" class="competence-desc">
-                    <p>JavaScript est un langage de programmation utilisé pour rendre les pages web interactives.</p>
-                </div>
-            </div>
-
-            <!-- TypeScript -->
-            <div class="competence-item" onclick="toggleDescription('typescript-desc')" data-category="languages">
-                <p>TypeScript</p>
-                <img class="competence-img" src="img/typescript_logo.png" alt="TypeScript logo">
-                <div id="typescript-desc" class="competence-desc">
-                    <p>TypeScript est un sur-ensemble de JavaScript ajoutant le typage statique pour un code plus robuste.</p>
-                </div>
-            </div>
+        <div class="tl-item">
+          <div class="tl-date">Juin – Août 2023</div>
+          <h3 data-i18n="experience.job2Title">Serveur</h3>
+          <div class="tl-org">IcrokCafé, Les Mazures</div>
         </div>
-<!-- ******************************************************************************************-->
 
-        <!-- Catégorie Frameworks -->
-        <h3 data-category="frameworks">Frameworks</h3>
-        <div class="competences_lst">
-            <!-- Symfony -->
-            <div class="competence-item" onclick="toggleDescription('symfony-desc')" data-category="frameworks">
-                <p>Symfony</p>
-                <img class="competence-img" src="img/symfony_logo.jpg" alt="Symfony logo">
-                <div id="symfony-desc" class="competence-desc">
-                    <p>Symfony est un framework PHP facilitant le développement d'applications web robustes et modulaires.</p>
-                </div>
-            </div>
-
-            <!-- React -->
-            <div class="competence-item" onclick="toggleDescription('react-desc')" data-category="frameworks">
-                <p>React</p>
-                <img class="competence-img" src="img/React_logo.png" alt="React logo">
-                <div id="react-desc" class="competence-desc">
-                    <p>React est une bibliothèque JavaScript pour créer des interfaces utilisateur interactives et performantes.</p>
-                </div>
-            </div>
+        <div class="tl-item edu">
+          <div class="tl-date" data-i18n="experience.edu1Date">2023 — en cours</div>
+          <h3>BUT Informatique — <span data-i18n="experience.edu1Track">parcours Développement Web</span></h3>
+          <div class="tl-org">IUT Reims-Châlons-Charleville</div>
+          <p style="color:var(--text-muted); font-size:.92rem; margin-top:10px;" data-i18n="experience.edu1Desc">3ᵉ année : parcours développement web · 2ᵉ année : parcours C++</p>
         </div>
-    
-<!--********************************************************************************************************************************-->
 
-        <!-- Catégorie Logiciels -->
-        <h3 data-category="tools">Logiciels</h3>
-        <div class="competences_lst">
-            <!-- Jupyter -->
-            <div class="competence-item" onclick="toggleDescription('jupyter-desc')" data-category="tools">
-                <p>Jupyter</p>
-                <img class="competence-img" src="img/jupyter_logo.jpg" alt="Jupyter logo" >
-                <div id="jupyter-desc" class="competence-desc">
-                    <p>Jupyter est un environnement interactif pour la data science, permettant d'exécuter du code en direct.</p>
-                </div>
-            </div>
-    
-            <!-- Oracle -->
-            <div class="competence-item" onclick="toggleDescription('oracle-desc')" data-category="tools">
-                <p>Oracle</p>
-                <img class="competence-img" src="img/oracle-logo.jpg" alt="Oracle logo">
-                <div id="oracle-desc" class="competence-desc">
-                    <p>Oracle Database est un système de gestion de base de données pour applications d'entreprise.</p>
-                </div>
-            </div>
-    
-            <!-- PhpStorm -->
-            <div class="competence-item" onclick="toggleDescription('phpstorm-desc')" data-category="tools">
-                <p>PhpStorm</p>
-                <img class="competence-img" src="img/phpstorm_logo.jpg" alt="PhpStorm logo">
-                <div id="phpstorm-desc" class="competence-desc">
-                    <p>PhpStorm est un IDE avancé pour PHP, offrant des outils de développement performants.</p>
-                </div>
-            </div>
-    
-            <!-- PyCharm -->
-            <div class="competence-item" onclick="toggleDescription('pycharm-desc')" data-category="tools">
-                <p>PyCharm</p>
-                <img class="competence-img" src="img/pycharm_logo.jpg" alt="PyCharm logo">
-                <div id="pycharm-desc" class="competence-desc">
-                    <p>PyCharm est un IDE dédié à Python, avec des fonctionnalités de débogage et de gestion de projets.</p>
-                </div>
-            </div>
-    
-            <!-- SQL Developer -->
-            <div class="competence-item" onclick="toggleDescription('sqlDev-desc')" data-category="tools">
-                <p>SQL Developer</p>
-                <img class="competence-img" src="img/sqlDev_logo.jpg" alt="SQL Developer logo">
-                <div id="sqlDev-desc" class="competence-desc">
-                    <p>SQL Developer est un outil graphique d'Oracle pour développer et gérer des bases de données SQL.</p>
-                </div>
-            </div>
-    
-            <!-- Ubuntu -->
-            <div class="competence-item" onclick="toggleDescription('ubuntu-desc')" data-category="tools">
-                <p>Ubuntu</p>
-                <img class="competence-img" src="img/ubuntu_logo.jpg" alt="Ubuntu logo">
-                <div id="ubuntu-desc" class="competence-desc">
-                    <p>Ubuntu est un système d'exploitation Linux populaire, utilisé pour le développement et les serveurs.</p>
-                </div>
-            </div>
-    
-            <!-- VSCode -->
-            <div class="competence-item" onclick="toggleDescription('vscode-desc')" data-category="tools">
-                <p>Visual Studio Code</p>
-                <img class="competence-img" src="img/vscode_logo.jpg" alt="Visual Studio Code logo">
-                <div id="vscode-desc" class="competence-desc">
-                    <p>Visual Studio Code est un éditeur de code source gratuit, avec un large support d'extensions.</p>
-                </div>
-            </div>
-            <!-- Git -->
-            <div class="competence-item" onclick="toggleDescription('git-desc')" data-category="tools">
-                <p>Git</p>
-                <img class="competence-img" src="img/git_logo.jpg" alt="Git logo">
-                <div id="git-desc" class="competence-desc">
-                    <p>Git est un logiciel de gestion de versions décentralisé. C'est un logiciel libre et gratuit.</p>
-                </div>
-            </div>
+        <div class="tl-item edu">
+          <div class="tl-date">2020 — 2023</div>
+          <h3 data-i18n="experience.edu2Title">Baccalauréat général</h3>
+          <div class="tl-org">Lycée François Bazin, Charleville-Mézières</div>
+          <p style="color:var(--text-muted); font-size:.92rem; margin-top:10px;" data-i18n="experience.edu2Desc">Mention Assez Bien — Spécialités Mathématiques, NSI, SI</p>
         </div>
-        <button class="show-more-btn" id="outils-show-more" onclick="toggleShowMore('outils')">Voir plus</button>
-    </section>
 
-    <section class="skills-section">
-        <p id="competences" class="skills-title"><b>Compétences Transversales</b></p>
-        
-        <div class="skills-list">
-            <div class="skill-item">
-                <h4>Développement d'applications complètes</h4>
-                <p>Conception et implémentation d'applications informatiques de la spécification jusqu'au déploiement, en respectant les bonnes pratiques de développement et les normes de qualité.</p>
-            </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="skill-item">
-                <h4>Conception et développement d'interfaces utilisateur</h4>
-                <p>Création d'interfaces web responsive et intuitives en respectant les principes UX/UI pour garantir une expérience utilisateur optimale.</p>
-            </div>
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="contact.eyebrow">05 — Contact</p>
+        <h2 data-i18n="contact.title">Travaillons ensemble</h2>
+        <p data-i18n="contact.desc">Une question, un projet, une envie de collaborer ? Écris-moi, je réponds rapidement.</p>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:killyanlebeguepro@gmail.com" class="contact-card primary">
+          <span class="label" data-i18n="contact.emailLabel">Email</span>
+          <span class="value">killyanlebeguepro@gmail.com</span>
+        </a>
+        <a href="tel:0750015990" class="contact-card">
+          <span class="label" data-i18n="contact.phoneLabel">Téléphone</span>
+          <span class="value">07 50 01 59 90</span>
+        </a>
+        <a href="https://www.linkedin.com/in/killyan-lebegue" target="_blank" rel="noopener" class="contact-card">
+          <span class="label">LinkedIn</span>
+          <span class="value">/in/killyan-lebegue</span>
+        </a>
+        <button type="button" class="contact-card" id="cvPreviewBtn">
+          <span class="label" data-i18n="contact.cvLabel">CV</span>
+          <span class="value" data-i18n="contact.cvValue">Voir l'aperçu →</span>
+        </button>
+      </div>
+    </div>
+  </section>
 
-            <div class="skill-item">
-                <h4>Gestion et administration de bases de données</h4>
-                <p>Conception, modélisation, exploitation et administration de bases de données relationnelles avec optimisation des requêtes et garantie de l'intégrité des données.</p>
-            </div>
+</main>
 
-            <div class="skill-item">
-                <h4>Administration systèmes et réseaux</h4>
-                <p>Installation, configuration et surveillance de systèmes informatiques et réseaux avec prise en compte des aspects de sécurité et de performance.</p>
-            </div>
+<div class="cv-modal" id="cvModal" hidden>
+  <div class="cv-modal-backdrop" id="cvModalBackdrop"></div>
+  <div class="cv-modal-box" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+    <div class="cv-modal-head">
+      <span id="cvModalTitle" data-i18n="cvModal.title">Aperçu du CV</span>
+      <div class="cv-modal-actions">
+        <a href="assets/docs/CV-Killyan-Lebegue.pdf" target="_blank" rel="noopener" data-i18n="cvModal.download">Télécharger ↗</a>
+        <button type="button" id="cvModalClose" aria-label="Fermer">✕</button>
+      </div>
+    </div>
+    <div class="cv-modal-body">
+      <iframe id="cvModalFrame" title="Aperçu du CV de Killyan Lebegue"></iframe>
+      <div class="cv-modal-fallback" id="cvModalFallback" hidden>
+        <p data-i18n="cvModal.fallback">L'aperçu ne s'affiche pas sur cet appareil.</p>
+        <a href="assets/docs/CV-Killyan-Lebegue.pdf" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="cvModal.open">Ouvrir le PDF ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div class="skill-item">
-                <h4>Sécurisation des systèmes informatiques</h4>
-                <p>Mise en œuvre de solutions de sécurité pour protéger les systèmes et les données contre les vulnérabilités et les cybermenaces.</p>
-            </div>
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Killyan Lebegue — <span data-i18n="footer.made">conçu &amp; codé à Reims</span></p>
+    <div class="social-links">
+      <a href="https://github.com/KillyanLDevelopper" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/killyan-lebegue" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:killyanlebeguepro@gmail.com">Email</a>
+      <a href="identite-visuelle/Brandboard-Killyan-Lebegue.pdf" target="_blank" rel="noopener" data-i18n="footer.brandboard">Identité visuelle</a>
+    </div>
+  </div>
+</footer>
 
-            <div class="skill-item">
-                <h4>Gestion de projet et méthodologies Agile</h4>
-                <p>Organisation, planification et pilotage de projets informatiques en utilisant les méthodologies Agile Scrum pour une livraison itérative et collaborative.</p>
-            </div>
-
-            <div class="skill-item">
-                <h4>Travail collaboratif en équipe</h4>
-                <p>Communication efficace et collaboration au sein d'équipes de développement en utilisant des outils de versioning (Git) et de gestion de projet.</p>
-            </div>
-
-            <div class="skill-item">
-                <h4>Tests et validation logicielle</h4>
-                <p>Élaboration et exécution de tests unitaires, d'intégration et fonctionnels pour vérifier et valider la qualité des applications développées.</p>
-            </div>
-
-            <div class="skill-item">
-                <h4>Documentation technique</h4>
-                <p>Rédaction de documentation claire et structurée (spécifications, guides utilisateurs, API) pour faciliter la maintenance et l'évolution des projets.</p>
-            </div>
-
-            <div class="skill-item">
-                <h4>Veille technologique</h4>
-                <p>Maintien à jour des connaissances sur les évolutions technologiques, les nouveaux frameworks et les meilleures pratiques du développement web.</p>
-            </div>
-
-            <div class="skill-item">
-                <h4>Analyse et résolution de problèmes</h4>
-                <p>Capacité à analyser des problématiques techniques complexes, identifier les causes et proposer des solutions efficaces et adaptées.</p>
-            </div>
-
-            <div class="skill-item">
-                <h4>Optimisation et performance</h4>
-                <p>Amélioration des performances des applications en optimisant les algorithmes, les requêtes et l'utilisation des ressources systèmes.</p>
-            </div>
-        </div>
-        <button class="show-more-btn" id="competences-show-more" onclick="toggleShowMore('competences')">Voir plus</button>
-    </section>
-    
-    <script src="js/scripts.js"></script>
-
-    <section id="experiences" class="experiences-section">
-        <p class="exp-title"><b>Expériences & Stages</b></p>
-        
-        <div class="experiences-timeline">
-            <div class="experience-item">
-                <div class="experience-icon"></div>
-                <div class="experience-content">
-                    <h3>Stage Développeur Web
-                        <span class="toggle-arrow" id="stage-arrow" onclick="toggleDetail('stage-details', 'stage-arrow')">▶</span>
-                    </h3>
-                    <p class="experience-company">IREMI - Reims</p>
-                    <span class="experience-date">Avril 2025 - Juin 2025 (8 semaines)</span>
-                    <div id="stage-details" class="experience-detail" style="display: none;">
-                        <p><strong>Missions réalisées :</strong></p>
-                        <ul>
-                            <li>Création d'un planning et diagramme de GANTT</li>
-                            <li>Création et exploitation d'une base de données</li>
-                            <li>Développement de pages web dynamiques</li>
-                            <li>Gestion d'interfaces utilisateur</li>
-                            <li>Utilisation de logiciels de gestion de projet</li>
-                        </ul>
-                        <p><strong>Technologies utilisées :</strong> PHP, HTML, CSS, JavaScript, SQL</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="parcours-section">
-        <p id="parcours" class="parc"><b>Parcours</b></p>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-icon"></div>
-                <div class="timeline-content">
-                    <h3>BUT informatique
-                        <span class="toggle-arrow" id="but-arrow" onclick="toggleDetail('but-details', 'but-arrow')">▶</span>
-                    </h3>
-                    <p><a href="https://www.univ-reims.fr/iut-rcc/">IUT Reims-Châlons-Charleville</a>, Reims</p>
-                    <span class="timeline-date">2023 / ...</span>
-                    <div id="but-details" class="timeline-detail" style="display: none;">
-                        <p> 3ème année : Parcours : développement web</p>
-                        <p> 2ème année : Parcours : dev C++</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-icon"></div>
-                <div class="timeline-content">
-                    <h3>Baccalauréat 
-                        <span class="toggle-arrow" id="baccalaureat-arrow" onclick="toggleDetail('baccalaureat-details', 'baccalaureat-arrow')">▶</span>
-                    </h3>
-                    <p><a href="https://lyc-bazin.monbureaunumerique.fr/">Lycée François-Bazin</a>, Charleville-Mézières</p>
-                    <span class="timeline-date">2020 / 2023</span>
-                    <div id="baccalaureat-details" class="timeline-detail" style="display: none;">
-                        <p>Mention : Assez bien</p>
-                        <p>Spécialités : Mathématiques, NSI, SI (abandonné en fin de 2ème année)</p>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="timeline-item">
-                <div class="timeline-icon"></div>
-                <div class="timeline-content">
-                    <h3>Brevet des collèges 
-                        <span class="toggle-arrow" id="brevet-arrow" onclick="toggleDetail('brevet-details', 'brevet-arrow')">▶</span>
-                    </h3>
-                    <p><a href="https://clg-blanc-marais.monbureaunumerique.fr/">Collège du Blanc-Marais</a>, Rimogne</p>
-                    <span class="timeline-date">2016 / 2020</span>
-                    <div id="brevet-details" class="timeline-detail" style="display: none;">
-                        <p>Mention : Très bien</p>
-                    </div>
-                </div>
-            </div>            
-        </div>
-    </section>   
-    
-    <section id="cv" class="cv-section">
-        <h2>Mon CV</h2>
-        <p>Téléchargez mon CV pour découvrir mon parcours complet, mes compétences et mes expériences professionnelles.</p>
-        <div class="cv-container">
-            <div class="cv-preview">
-                <img src="img/CV_Preview.png" alt="Aperçu du CV">
-            </div>
-            <div class="cv-actions">
-                <a href="docs/KILLYAN_LEBEGUE_CV.pdf" download class="cv-btn download-btn">
-                    📥 Télécharger le CV (PDF)
-                </a>
-                <a href="docs/KILLYAN_LEBEGUE_CV.pdf" target="_blank" class="cv-btn view-btn">
-                    👁️ Voir le CV
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <section id="projets" class="projects-section">
-        <h2>Mes Projets</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Whoz That</h3>
-                <p> L'objectif de ce projet était de crée un qui -est-ce à partir d'une base de données d'Animal Crossing. Le principe est simple, l'ordinateur choisis au hasard une des différentes images qui apparaissent et le joueur dois en posant des questions prédéfinis sélectionnables. Et le but final est pour le joueur de retrouver le personnage choisit par l'ordinateur. </p>
-                <a href="https://github.com/KillyanLDevelopper/Whoz-That" target="_blank" class="project-link">Accès au projet</a>
-            </div>
-
-            <div class="project-card">
-                <h3> Labyrinthe </h3>
-                <p>L'objectif de ce projet en binôme était de créer un labyrinthe de 0 avec des méthodes de générations différentes et ensuite de pouvoir afficher le chemin correct en utilisant différentes méthodes.</p>
-                <a href="https://github.com/KillyanLDevelopper/Labyrinthe" target="_blank" class="project-link">Accès au projet</a>
-            </div>
-            <div class="project-card">
-                <h3> Puissance 4  </h3>
-                <p> L'objectif de ce projet était de créer et rendre fonctionnel un puissance 4. Ce puissance 4 est jouables en joueur contre joueur mais également en joueur contre IA. Pour cela nous avons eu besoin d'une interface graphique qui nous à été donné, ensuite c'était à nous de faire le code pour que le jeu deviennent fonctionnels. </p>
-                <a href="https://github.com/KillyanLDevelopper/connect_four" target="_blank" class="project-link">Accès au projet</a>
-            </div>
-            <div class="project-card">
-                <h3> Php crud TvShow </h3>
-                <p> Projet de fin de 1ère année, réalisé en duo sur une période de 3 jours. Nous avons développé une application web permettant d'explorer et de modifier une base de données regroupant des informations détaillées sur des séries TV. Ce projet nous a permis de mettre en pratique nos compétences en développement web et en gestion de bases de données, tout en collaborant efficacement pour respecter un délai court. </p>
-                <a href="https://github.com/KillyanLDevelopper/php-crud-tvshow" target="_blank" class="project-link">Accès au projet</a>
-            </div>
-            <div class="project-card">
-                <h3> Covergle </h3>
-                <p> Covergle est un projet de plateforme web que je développe autour de l’univers du streaming et du gaming, avec pour objectif de proposer une interface moderne et interactive permettant d’afficher et de gérer différents contenus liés aux utilisateurs et aux plateformes comme Twitch. Le projet me permet de travailler sur le développement web full-stack à travers la création d’interfaces dynamiques, la gestion des routes, des requêtes API et des données utilisateurs, tout en utilisant des technologies modernes pour concevoir une application fluide et responsive. Grâce à ce projet, je développe mes compétences en architecture web, intégration d’API, gestion de données et expérience utilisateur. Ce projet est toujours en cours de développement afin de l'herberger et de le rendre accessible à tous.</p>
-                <a href="https://github.com/KillyanLDevelopper/covergle" target="_blank" class="project-link">Accès au projet</a>
-            </div>
-            <div class="project-card">
-                <h3> VGWordle </h3>
-                <p> VGWordle est un jeu de devinettes inspiré du célèbre Wordle, entièrement repensé autour de l'univers des jeux vidéo. Développé en HTML, CSS et JavaScript vanilla, il propose aux joueurs de deviner un mot lié au gaming en un nombre limité d'essais, avec un système de retour visuel coloré pour guider chaque tentative. Que vous soyez fan de RPG, de FPS ou de jeux rétro, chaque partie est une occasion de tester vos connaissances culturelles du monde vidéoludique, dans une interface soignée qui rend hommage à l'esthétique du jeu vidéo. Ce projet est toujours en cours de développement.</p>
-                <a href="https://github.com/KillyanLDevelopper/VGWordle" target="_blank" class="project-link">Accès au projet</a>
-            </div>
-            
-            
-        </div>
-    </section>
-    
-    <section id="contact" class="contact-section">
-        
-
-        <h2>Contactez-moi</h2>
-        <p>Si vous avez des questions, des propositions ou souhaitez en savoir plus sur mes projets, n'hésitez pas à me contacter en remplissant le formulaire ci-dessous.</p>
-    
-        <div id="contact-status" class="contact-status"></div>
-        
-        <form id="contact-form" class="contact-form">
-            <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="from_name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="from_email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="subject">Sujet</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">Envoyer</button>
-        </form>
-    </section>
-
-    <!-- Bouton Retour en haut -->
-    <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut">
-        ↑
-    </button>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Killyan Lebègue</h3>
-                <p>Étudiant en BUT Informatique</p>
-                <p>Développeur Web Passionné</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Navigation</h3>
-                <ul class="footer-links">
-                    <li><a href="#presentation">Présentation</a></li>
-                    <li><a href="#outils">Outils</a></li>
-                    <li><a href="#competences">Compétences</a></li>
-                    <li><a href="#parcours">Parcours</a></li>
-                    <li><a href="#projets">Projets</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Réseaux Sociaux</h3>
-                <div class="social-links">
-                    <a href="https://github.com/KillyanLDevelopper" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/killyan-lebegue-868b68326/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                    <a href="mailto:killyanlebegue000@gmail.com" aria-label="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Killyan Lebègue. Tous droits réservés.</p>
-        </div>
-    </footer>
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="js/scripts.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
-

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0B0E14"/>
+  <path d="M17 20 L10 32 L17 44" fill="none" stroke="#00D9C0" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="24" y="41" font-family="'Poppins','Montserrat','Segoe UI',sans-serif" font-weight="700" font-size="20" fill="#F6F5F1">K</text>
+  <path d="M40 44 L47 20" fill="none" stroke="#FF6B5E" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M47 20 L54 32 L47 44" fill="none" stroke="#00D9C0" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
