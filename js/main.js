@@ -85,7 +85,8 @@
       "cvModal.open": "Open the PDF ↗",
 
       "footer.made": "designed &amp; built in Reims",
-      "footer.brandboard": "Brand identity"
+      "footer.moodboard": "Moodboard",
+      "footer.brandboard": "Brandboard"
     }
   };
 
